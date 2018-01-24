@@ -1,0 +1,25 @@
+Lab Assignment.
+
+Ancient Chinese were the first to develop rockets, but the father of modern rocketry is Robert Goddard developer of the very first liquid fueled rocket in the 1920s. It is evident that there would not have been no space exploration without rockets.
+
+Last week, Elon Musk's SpaceX successfully relaunched and landed a recycled rocket, which is quite a historic step in the field of rocket re-usability. In view of this development, your task in this lab is to first read more about Rockets on Wikipedia (https://en.wikipedia.org/wiki/Rocket).
+
+Once you have skimmed through the article, you must have developed a conceptual model of the problem domain, in this case about rockets. 
+
+A conceptual model is just a composition of concepts to help people know, understand and learn about a subject area/domain. The concepts/subsystems are illustrated as a collection of connected rectangular blocks.
+
+Once you have developed the hierarchy of concepts/subsystems, the objects in the system are identified and their details are designed. Here, the emphasis shifts from domain concepts to computer concepts; that is, the objects identified are etched up for implementation. The process is called object oriented design. 
+
+Some of the basic steps that can be used for this task are:
+
+1) Object identification. The objects identified in the analysis phase are grouped into classes and refined so that they are suitable for actual implementation.
+
+2) Design of Relationships. The main relationships that are addressed comprise of associations, aggregations, and inheritances.
+
+3) Object Representation. Once the classes are identified, they need to be represented using object modeling techniques. This stage essentially involves constructing UML diagrams.
+
+4) Classification of Operations. In this step, the operation to be performed on objects are defined.
+
+5) Algorithm Design. The operations in the objects are defined using algorithms.
+
+Your task in this lab assignment is to follow the aforementioned steps to come with an object oriented design and its corresponding Java classes. Lastly create a test class to demonstrate your proposed object oriented design.

@@ -1,0 +1,127 @@
+Task #1. An abstract stack
+
+The goal of this task is to gain familiarity with a basic data structure, an abstract stack.
+
+A stack is an abstract data type that allows only a limited number of operations on a collection of data. Elements are stored in order of insertion and the elements are removed in reverse order. Because the last element that is inserted is the first to be removed, it is often referred to as a Last-in First-out (LIFO) collection.
+
+There are several ways that stacks can be implemented. For example, you can use an dynamic array, an ArrayList, a linked list of nodes, or a LinkedList. For this assignment you may implement a stack using an array.
+
+Task #1a: Create Stack class
+
+Begin this lab by creating a simple class that represents a "stack".
+
+Implement the function definitions of the Stack class.
+
+(a) Push() method. A stack class will typically maintains top of the stack (an index variable), initially, set to -1 to indicate an empty stack.
+(b) Pop()  method. The method should remove the item at the top of the stack.
+(c) Peek() method. The method should return the value at the top of the stack.
+
+Test the completed class by pushing three numbers: 100, 200 and 300, and then popping them out one by one. Your output should look similar to one below:
+
+NULL
+100 -> NULL
+200 -> 100 -> NULL
+300 -> 200 -> 100 -> NULL
+200 -> 100 -> NULL
+100 -> NULL
+NULL
+
+Task #1b. Simple balanced parentheses
+
+We now turn our attention to using stacks to solve real computer science problems. You have no doubt written arithmetic expressions such as,
+
+(5 + 6) * (7 + 8) = (4 + 3)
+
+where parentheses are used to order the precedence of operations. Some of you might be familiar with Lisp programming language, for example a function named square returns the square of an argument.
+
+(defun square(n)
+(* n n))
+
+You might notice a bunch full of parentheses used for a simple function, and this makes Lisp notorious.
+
+In the above example the parentheses must appear in a balanced fashion. Balanced parentheses means that each opening token has a corresponding closing token and the pairs of parentheses are properly nested. 
+
+Consider the following correctly balanced strings of parentheses:
+
+( ( ) ( ) ( ) ( ) )
+( ( ( ( ) ) ) )
+( ( ) ( ( ( ) ) ( ) ) )
+
+Compare those with the following, which are not balanced:
+
+( ( ( ( ( ( ( ) )
+( ) ) )
+( ( ) ( ) ( ( )
+
+The ability to differentiate between parentheses that are correctly balanced and those that are unbalanced is an important part of recognizing many programming language structures. The challenge then is to write an algorithm that will read a string of parentheses from left to right and decide whether the tokens are balanced.
+
+To solve this problem we need to make some important observations. As you process tokens from left to right,
+
+a) the most recent opening parenthesis must match the next closing.
+b) the first opening token processed may have to wait until the very last token for its match.
+c) closing tokens match opening tokens in the reverse order of their appearance; they match from the inside out. This is a clue that stacks can be used to solve the problem.
+
+The algorithm is relatively straightforward,
+
+1. Start with an empty stack, process the expression from left to right (token by token).
+2. If a token is an opening parenthesis, push it on the stack as a signal that a corresponding closing token needs to appear later.
+3. If, on the other hand, a token is a closing parenthesis, pop the stack.
+4. As long as it is possible to pop the stack to match every closing token, the parentheses remain balanced. If at any time there is no opening token on the stack to match a closing token, the string is not balanced properly. At the end of the string, when all tokens have been processed, the stack should be empty.
+
+s := Stack()
+for each token in expression:
+	if IS-OPEN-FORM(token): // opening parenthesis
+		s.PUSH(token)
+	else if IS-CLOSE-FORM(token): // closing parenthesis
+		s.POP()
+if s.IS-EMPTY():
+	return balanced
+else
+	return unbalanced
+
+	
+Task #2. An abstract queue
+
+In this lab, you will be introduced to what is necessary to implement an abstract queue.
+
+A queue is another abstract data type that allows only a limited number of operations on a collection of data. Again, elements are stored in order of insertion. But with queues the elements are removed in the same order. Because the first element that is inserted is the first to be removed, it is often referred to as First-in First-out collection. 
+
+Task #2a: An abstract queue
+
+For this assignment the operations that any implementation of a queue must have.
+
+(a) Enqueue() method. A queue class will typically contain a Node reference for the back of the queue that is set to null at construction time to indicate an empty queue.
+(b) Dequeue() method. The method should remove the item at the front of the queue.
+(c) Front() method. The method should return the value at the front of the queue.
+(d) Back() method. The method should return the value at the back of the queue.
+
+Again, there are several ways that queues can be implemented. For this task you can write an implementation using an array.
+
+Test the completed class by enqueue-ing three numbers: 100, 200 and 300, and then dequeue-ing them out one by one. Your output should look similar to one below:
+
+NULL
+100 -> NULL
+100 -> 200 -> NULL
+100 -> 200 -> 300 -> NULL
+200 -> 300 -> NULL
+300 -> NULL
+NULL
+
+Task #2b. Palindrome checker
+
+You know that a palindrome is a string that reads the same forward and backward, for example, radar, toot, and madam.
+
+The challenge then is to write an algorithm that will read a sentence word-by-word from left to right and decide whether it is a palindrome. Some palindrome strings as an example.
+
+"A man, a plan, a canal—Panama!"
+"Able I was ere, I saw Elba."
+"Won ton? Not now!"
+"Madam, I’m Adam."
+"Eve."
+
+The algorithm to check for palindromes is relatively straightforward,
+
+1. Use a stack and a queue.
+2. Push and Enqueue tokens (letters) into both data structures.
+3. Pop and Dequeue the tokens (letters) and compare.
+4. Perform remove operation until one of the data structure is empty. If the case is that both are empty, the sentence is a palindrome.
