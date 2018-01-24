@@ -1,0 +1,5 @@
+Serena-Hotel		Khayaban
+Mariot-Hotel		Shalimar
+Bella-View		F-8
+Ramada-Hotel		Murree-road
+Hotel-One		G-9

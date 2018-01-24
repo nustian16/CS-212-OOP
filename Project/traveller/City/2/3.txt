@@ -1,0 +1,7 @@
+Residency-Hotel	Model-Town
+Nishat-Hotel		Kasoori-Road
+Amer-Hotel		Mall-Road
+Savoey-Hotel		GuruMangat-Road
+Ambassador-Hotel	Davis-Road
+Parkway-Hotel		McLeod-Road
+Faletti-Hotel		Edgerton-Road

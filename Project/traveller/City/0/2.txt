@@ -1,0 +1,5 @@
+KFC		F-10
+Howdy		F-7
+Foodway		F-11
+Shahjee		F-11
+Pizza-Hut		G-10
